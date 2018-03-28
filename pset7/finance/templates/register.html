@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+    <form class="form-check" action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" aria-describedby="username-info" autofocus class="form-control input-check invalid" name="username" placeholder="Username" type="text" id="username"/>
+            <small class="form-text check-info" id="username-info">User name is occupied, change one!</small>
+        </div>
+        <div class="form-group">
+            <input class="form-control input-check invalid" aria-describedby="password-info" name="password" placeholder="Password" type="password" id="password"/>
+            <small class="form-text check-info" id="password-info">
+                    <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                    <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                    <li id="number" class="invalid">At least <strong>one number</strong></li>
+                    <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+                </ul>
+            </small>
+        </div>
+        <div class="form-group">
+            <input class="form-control input-check invalid" aria-describedby="confirmation-info" name="confirmation" placeholder="Confirm Passform" type="password" id="confirmation" />
+            <small class="form-text check-info" id="confirmation-info">
+                Two passwords are no the same
+            </small>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    </div>
+{% endblock %}
